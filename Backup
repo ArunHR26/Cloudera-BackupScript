@@ -14,7 +14,7 @@ BACKUPHOSTIP="10.xx.xx.xx"            # change backup host ip
 SSHUSER="root"                         # do not change
 BACKUPDATE=`date '+%d_%m_%y'`
 BACKUPPATH="/opt/backup/backup_${BACKUPDATE}"          # change to back dir location
-userdir="/opt/panera"
+userdir="/home/user" #change to user dir
 FDATETIME="${BACKUPDATETIME}"
 BACKUPDATETIME=`date '+%d_%m_%y_%H_%M'`
 METADATABACKUPFULLPATH="namenodeMetaData_${BACKUPDATETIME}.tar.gz"
@@ -238,8 +238,7 @@ _eMail_Shoot
 fi
 }
 _eMail_Shoot () {
-#cat ${_tmplog} | mail -s "backupscript log --- `hostname -f`" CTL_OFFSHORE_HADOOP_ADMIN@CenturyLink.com
-cat ${_tmplog} | mail -s "backupscript log --- `hostname -f`" arun.p.singh@CenturyLink.com
+cat ${_tmplog} | mail -s "backupscript log --- `hostname -f`" arunsingh@outlook.in
 cat ${_tmplog} >> ${0}.log && rm -rf ${_tmplog}
 }
 
